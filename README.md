@@ -41,6 +41,6 @@ grep "${tag[0]}:" public_gists.md
 ### Extract private gists from a specific tag
 
 ```sh
-tag=(R sh sed awk py f90 md git aws)
+tag=(R sh sed awk py f90 md git aws workflow)
 grep "${tag[0]}:" private_gists.md
 ```
