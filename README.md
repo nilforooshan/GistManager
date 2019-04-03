@@ -31,16 +31,22 @@ grep _false gists.md | sed 's/_false//' > private_gists.md
 rm description url public tmp.md gists.md
 ```
 
-### Extract public gists from a specific tag
+### Extract public gists by tag
 
 ```sh
 tag=(R sh sed awk py f90 md git aws docker)
-grep "${tag[0]}:" public_gists.md
+for i in "${tag[@]}"
+do
+   grep "$i:" public_gists.md > ${i}_public_gists.md
+done
 ```
 
 ### Extract private gists from a specific tag
 
 ```sh
 tag=(R sh sed awk py f90 md git aws docker workflow)
-grep "${tag[0]}:" private_gists.md
+for i in "${tag[@]}"
+do
+   grep "$i:" private_gists.md > ${i}_private_gists.md
+done
 ```
