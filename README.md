@@ -37,7 +37,9 @@ rm description url public tmp.md gists.md
 tag=(R sh sed awk py f90 md git aws docker)
 for i in "${tag[@]}"
 do
-   grep "$i:" public_gists.md > ${i}_public_gists.md
+   echo "# Public $i gists" > ${i}_public_gists.md
+   echo >> ${i}_public_gists.md
+   grep "$i:" public_gists.md >> ${i}_public_gists.md
 done
 ```
 
@@ -47,6 +49,8 @@ done
 tag=(R sh sed awk py f90 md git aws docker workflow)
 for i in "${tag[@]}"
 do
-   grep "$i:" private_gists.md > ${i}_private_gists.md
+   echo "# Private $i gists" > ${i}_private_gists.md
+   echo >> ${i}_private_gists.md
+   grep "$i:" private_gists.md >> ${i}_private_gists.md
 done
 ```
