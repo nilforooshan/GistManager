@@ -46,6 +46,7 @@ do
    echo "## Private" >> ${i}_gists.md
    echo >> ${i}_gists.md
    grep "$i:" private_gists.md >> ${i}_gists.md
+   sed -i "s/$i: //g" ${i}_gists.md
 done
 rm public_gists.md private_gists.md
 ```
