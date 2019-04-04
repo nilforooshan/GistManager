@@ -49,8 +49,8 @@ done
 ### Then
 
 ```sh
-echo "# Workflow gists" > workflow_gists.md
-echo >> workflow_gists.md
-grep "workflow:" private_gists.md >> workflow_gists.md
+echo "# Private workflow gists" > workflow_private_gists.md
+echo >> workflow_private_gists.md
+grep "workflow:" private_gists.md >> workflow_private_gists.md
 rm gists.json public_gists.md private_gists.md
 ```
