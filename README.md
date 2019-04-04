@@ -24,7 +24,7 @@ done
 grep html_url    gists.json | sed -e 's/\"//g' -e 's/,//' -e 's/ //g' -e 's/html_url://' | grep -v nilforooshan > url
 grep description gists.json | sed -e 's/\"//g' -e 's/,//' -e 's/;//' -e 's/    description: //' > description
 grep public gists.json | sed -e 's/\"//g' -e 's/,//' -e 's/ //g' -e 's/public://' > public
-paste -d';' description url | sed 's/;/](/' | sed 's/^/[/' | sed 's/$/)/' > tmp.md
+paste -d';' description url | sed 's/;/](/' | sed 's/^/[/' | sed 's/$/)   /' > tmp.md
 paste -d'_' tmp.md public > gists.md
 grep _true gists.md | sed 's/_true//' > public_gists.md
 grep _false gists.md | sed 's/_false//' > private_gists.md
