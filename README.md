@@ -2,17 +2,19 @@
 
 ### Create a JSON file of all gists
 
-Set your password.
+Set your password and the number of Gists.
 
 ```sh
 PASSWD=""
+Ngist=256
 ```
 
 Then,
 
 ```sh
 rm -f gists.json
-for i in {1..5} # Increase if you got more than 250 public gists.
+END=$(($Ngist/50+1))
+for i in $(eval echo "{1..$END}")
 do
    curl --user "nilforooshan:$PASSWD" -i "https://api.github.com/users/nilforooshan/gists?&page=$i&per_page=50" >> gists.json
 done
