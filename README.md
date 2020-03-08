@@ -36,7 +36,7 @@ rm description url public tmp.md gists.md
 ### Extract gists by tag
 
 ```sh
-tag=(R sh sed awk py f90 md git aws docker workflow)
+tag=(R sh sed awk py f90 md git aws docker)
 for i in "${tag[@]}"
 do
    echo "# $i gists" > ${i}_gists.md
@@ -51,4 +51,10 @@ do
    sed -i "s/$i: //g" ${i}_gists.md
 done
 rm public_gists.md private_gists.md
+```
+
+### Extract tag names
+
+```sh
+cut -d: -f1 *_gists.md | cut -c2- | sort | uniq
 ```
